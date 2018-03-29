@@ -21,6 +21,16 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :contactno %><br />
+    <%= f.telephone_field :contactno, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :departmentname %><br />
+    <%=f.select :departmentname, options_from_collection_for_select(Department.all, :id, :name)%>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
