@@ -1,20 +1,3 @@
-<!-- <div class="container">
-<h4>Current user: <%= @employee.name %></h4>
-<hr />
-<% @attendances = @employee.todays_attendance current_employee.id %>
-<% @attendances.each do |attendance| %>
-<h6 class="card-panel hoverable yellow">
-Time in: <%= attendance.timeIn %>
-<br />
-Location: <%= attendance.location %>
-<br />
-<% if attendance.remarks != nil %>
-Remarks: <%= attendance.remarks %>
-<% end %>
-</h6>
-<% end %>
-
-</div> -->
 <div class="card hover">
   <div class="card-img" style="background-image:url(https://images.unsplash.com/photo-1493847242172-d46053a1f671?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9f91dd5d50f16ba80af53a62d4caf2ce&auto=format&fit=crop&w=500&q=60);">
     <div class="overlay">
@@ -39,34 +22,20 @@ Remarks: <%= attendance.remarks %>
   </div>
 
   <div class="card-content">
-    <h2>Admin Login</h2>
+    <h2>History</h2>
   </div>
 </div>
 <div class="card hover">
   <div class="card-img" style="background-image:url(https://images.unsplash.com/photo-1493847242172-d46053a1f671?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9f91dd5d50f16ba80af53a62d4caf2ce&auto=format&fit=crop&w=500&q=60);">
     <div class="overlay">
       <div class="overlay-content">
-        <a class="hover" href="http://localhost:3000/employee">Login As Employee</a>
+        <button onclick="getLocation()">Mark Attendance</button>
       </div>
     </div>
   </div>
 
   <div class="card-content">
-    <h2>Employee Login</h2>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-img" style="background-image:url(https://images.unsplash.com/photo-1491374812364-00028bbe7d2f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a22e4862c36c552e726815949fbcb41a&auto=format&fit=crop&w=500&q=60);">
-    <div class="overlay">
-      <div class="overlay-content">
-        <a href="">Login As Admin</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card-content">
-    <h2>Admin Login</h2>
+    <h2>Mark Attendance</h2>
   </div>
 </div>
 
@@ -80,14 +49,14 @@ h2{
   height: 500px;
   display: inline-block;
   border-radius: 4px;
-  margin-left: 30px;
+  margin-left: 150px;
   margin-top: 100px;
   -webkit-box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
   background: #fff;
-  position: relative;
+
   overflow: hidden;
 }
 .card:hover, .card.hover {
@@ -108,7 +77,7 @@ h2{
   opacity: 1;
 }
 .card-img {
-  position: relative;
+
   height: 400px;
   width: 100%;
   background-color: #fff;
@@ -119,7 +88,7 @@ h2{
   background-size: cover;
 }
 .card-img .overlay {
-  position: absolute;
+
   left: 0;
   top: 0;
   width: 100%;
@@ -144,6 +113,8 @@ h2{
   border-radius: 20px;
   cursor: pointer;
   text-decoration: none;
+  font-size: 30px;
+  padding-top: 20px;
 }
 .card-img .overlay .overlay-content a:hover, .card-img .overlay .overlay-content a.hover {
   background: #ccb65e;
@@ -165,7 +136,7 @@ h2{
   color: #202927;
 }
 .card-content h2, .card-content a h2 {
-  font-size: 1rem;
+  font-size: 30px;
   font-weight: 500;
 }
 .card-content p, .card-content a p {
@@ -180,6 +151,20 @@ h2{
 </style>
 
 <script type="text/javascript">
+var x = document.getElementById("demo");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+    $.post('/home/mark_attendance',{"latitude":position.coords.latitude,"longitude":position.coords.longitude}, function(data) {
+       });
+}
 $(document).ready(function() {
 
   $('.card').delay(1800).queue(function(next) {
