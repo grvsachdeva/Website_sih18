@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/admin' => 'home#admin_index'
   get '/notify_employee' => 'home#notify_employee'
   post '/send_notification' => 'home#send_notification'
+  get '/checkout' => 'attendances#checkout'
+  post '/attendances/checkupdate' => 'attendances#check_update'
   root 'home#index'
 
 end

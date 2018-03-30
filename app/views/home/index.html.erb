@@ -1,4 +1,3 @@
-
 <div class="card hover">
 	<div class="card-img" style="background-image:url(https://images.unsplash.com/photo-1493847242172-d46053a1f671?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9f91dd5d50f16ba80af53a62d4caf2ce&auto=format&fit=crop&w=500&q=60);">
 		<div class="overlay">
@@ -26,33 +25,6 @@
 		<h2>Admin Login</h2>
 	</div>
 </div>
-
-
-<div id="demo"></div>
-<button onclick="getLocation()">Yoo</button>
-
-
-<script>
-var x = document.getElementById("demo");
-function getLocation() {
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition);
-	} else {
-		x.innerHTML = "Geolocation is not supported by this browser.";
-	}
-
-}
-function showPosition(position) {
-	x.innerHTML = "Latitude: " + position.coords.latitude +
-	"<br>Longitude: " + position.coords.longitude;
-	$.get('/attendances/new',{"latitude":position.coords.latitude,"longitude":position.coords.longitude}, function(data) {
-
-	});
-}
-
-</script>
-
-
 
 <style type="text/css">
 

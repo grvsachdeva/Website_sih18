@@ -34,7 +34,6 @@ class HomeController < ApplicationController
   end
 
   def send_notification
-    byebug
     @sender = current_employee
     @employee = Employee.where(id: params[:eid]).first
     NotificationMailer.send_notification(@employee, @sender).deliver_now

@@ -1,5 +1,6 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
+  before_action :check_records, only: [:new]
 
   # GET /attendances
   # GET /attendances.json
@@ -14,14 +15,30 @@ class AttendancesController < ApplicationController
 
   # GET /attendances/new
   def new
-    latitude = params[:latitude]
-    longitude = params[:longitude]
-    geo_localization = "#{latitude},#{longitude}"
-    query = Geocoder.search(geo_localization).first
-    location = query.formatted_address
-    time_in = Time.now
-    employee_id = current_employee.id
-    @attendance = Attendance.create(location:location,employee_id:employee_id,timeIn:time_in)
+    if @unmarked_records != nil
+      respond_to do |format|
+      # format.html{
+      #   redirect_to '/checkout'
+      # }
+      # end
+      format.js {
+        render js: "window.location.href = '/checkout'"
+      }
+    end
+      else
+      latitude = params[:latitude]
+      longitude = params[:longitude]
+      geo_localization = "#{latitude},#{longitude}"
+      query = Geocoder.search(geo_localization).first
+      location = query.formatted_address
+      time_in = Time.now
+      employee_id = current_employee.id
+      @attendance = Attendance.create(location:location, employee_id:employee_id, timeIn:time_in)
+    end
+  end
+
+  def checkout
+    @unmarked_records = Attendance.where(timeOut: nil, employee_id: current_employee.id)
   end
 
   # GET /attendances/1/edit
@@ -68,7 +85,20 @@ class AttendancesController < ApplicationController
     end
   end
 
+  def check_update
+    @attendance = Attendance.where(id: params[:attendance_id]).first
+    @attendance.timeOut = params[:timeOut]
+    @attendance.save
+    flash[:notice] = "Checkout time added successfully !!!"
+    redirect_to '/employee'
+  end
+
   private
+
+  def check_records
+    @unmarked_records = Attendance.where(timeOut: nil, employee_id: current_employee.id)
+  end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_attendance
     @attendance = Attendance.find(params[:id])
