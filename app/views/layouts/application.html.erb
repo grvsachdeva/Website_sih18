@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WebSih</title>
+    <title>Centralized Attendance System</title>
     <%= csrf_meta_tags %>
 
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+  <% if notice %>
+      <script type="text/javascript">
+          Materialize.toast('<%= notice %>', 4000)
+      </script>
+  <% end %>
+  <% if alert %>
+      <script type="text/javascript">
+          Materialize.toast('<%= alert %>', 4000)
+      </script>
+  <% end %>
 
     <%= yield %>
   </body>
