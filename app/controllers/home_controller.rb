@@ -14,7 +14,6 @@ class HomeController < ApplicationController
       @employees = Employee.all
       @departments = Department.all
     end
-
   end
 
   def admin_index
@@ -26,7 +25,6 @@ class HomeController < ApplicationController
       @employees = Employee.all
       @departments = Department.all
     end
-
   end
 
   def mark_attendance
@@ -39,6 +37,4 @@ class HomeController < ApplicationController
     employee_id = current_employee.id
     @attendance = Attendance.create(location:location,employee_id:employee_id,timeIn:time_in)
   end
-
-
 end

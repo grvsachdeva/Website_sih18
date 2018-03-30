@@ -1,3 +1,9 @@
-<% @employees.each do |employee| %>
-    <%= employee.name %>
-<% end %>
+<div class="container">
+  <% @employees.each do |employee| %>
+      <h6 class="card-panel hoverable">
+        <%= employee.name %>
+      </h6>
+  <% end %>
+
+</div>
+
