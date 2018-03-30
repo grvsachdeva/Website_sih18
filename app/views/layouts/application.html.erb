@@ -1,35 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Centralized Attendance System</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Centralized Attendance System</title>
+  <%= csrf_meta_tags %>
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  </head>
+  <nav id="header">
+    <div class="nav-wrapper" >
+      <a href="#" class="brand-logo" id="logo">Public Work Department</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <%unless employee_signed_in? %>
+        <li class="header_options"><%= link_to "Sign up", new_employee_registration_path(@employee) %></li>
+        <%end%>
+        <% if employee_signed_in? %>
+        <li class="header_options"><a href="/employee">Go To DashBoard</a></li>
+        <li><%= link_to('Logout', destroy_employee_session_path, method: :delete) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</head>
 
-  <body>
+<body>
 
   <% if notice %>
-      <script type="text/javascript">
-          Materialize.toast('<%= notice %>', 4000)
-      </script>
+  <script type="text/javascript">
+  Materialize.toast('<%= notice %>', 4000)
+  </script>
   <% end %>
   <% if alert %>
-      <script type="text/javascript">
-          Materialize.toast('<%= alert %>', 4000)
-      </script>
+  <script type="text/javascript">
+  Materialize.toast('<%= alert %>', 4000)
+  </script>
   <% end %>
-
   <%= yield %>
-  </body>
+</body>
 </html>
+
+
+<style type="text/css">
+nav{
+background-color: #3b5997;
+}
+
+
+nav ul a{
+font-size: 20px;
+padding-top: 20px;
+}
+a:visited {
+color:white;
+}
+
+a:hover{
+ background-color: #3b5997;
+}
+
+#logo:hover{
+background-color: #3b5997;
+}
+
+</style>
