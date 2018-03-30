@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d774b071-10e8-4470-a2a3-f5a2658961cf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/attendances/checkout.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/attendances_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/attendances_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/employee_index.html.erb" afterPath="$PROJECT_DIR$/app/views/home/employee_index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notification_mailer/send_notification.html.erb" afterPath="$PROJECT_DIR$/app/views/notification_mailer/send_notification.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -30,16 +27,23 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
               <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1522442262638" expanded="true" signature="134:141" ph=" ... end" />
+                <marker date="1522442262638" expanded="true" signature="164:476" ph=" ... end" />
+                <marker date="1522442262638" expanded="true" signature="169:470" ph="if ... end" />
+                <marker date="1522442262638" expanded="true" signature="495:802" ph=" ... end" />
+                <marker date="1522442262638" expanded="true" signature="500:796" ph="if ... end" />
+                <marker date="1522442262638" expanded="true" signature="825:910" ph=" ... end" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="attendances_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="attendances_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/attendances_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="92" column="18" lean-forward="false" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
+            <state relative-caret-position="298">
+              <caret line="78" column="30" lean-forward="true" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -88,12 +92,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employee_index.html.erb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="employee_index.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/home/employee_index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="482">
+              <caret line="190" column="0" lean-forward="true" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,7 +114,31 @@
               <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <marker date="1522442262638" expanded="true" signature="441:475" ph="..." />
+                <marker date="1522442262638" expanded="true" signature="502:911" ph="..." />
+                <marker date="1522442262638" expanded="true" signature="534:725" ph="..." />
+                <marker date="1522442262638" expanded="true" signature="726:844" ph="..." />
+                <marker date="1522442262638" expanded="true" signature="750:836" ph="..." />
+                <marker date="1522442262638" expanded="true" signature="783:827" ph="..." />
+                <marker date="1522442262638" expanded="true" signature="873:904" ph="..." />
+                <marker date="1522442262638" expanded="true" signature="936:3404" ph="..." />
+                <marker date="1522442262638" expanded="true" signature="941:965" ph="{...}" />
+                <marker date="1522442262638" expanded="true" signature="972:1333" ph="{...}" />
+                <marker date="1522442262638" expanded="true" signature="1359:1592" ph="{...}" />
+                <marker date="1522442262638" expanded="true" signature="1646:1757" ph="{...}" />
+                <marker date="1522442262638" expanded="true" signature="1821:1950" ph="{...}" />
+                <marker date="1522442262638" expanded="true" signature="1961:2183" ph="{...}" />
+                <marker date="1522442262638" expanded="true" signature="2203:2293" ph="{...}" />
+                <marker date="1522442262638" expanded="true" signature="2330:2403" ph="{...}" />
+                <marker date="1522442262638" expanded="true" signature="2442:2684" ph="{...}" />
+                <marker date="1522442262638" expanded="true" signature="2774:2823" ph="{...}" />
+                <marker date="1522442262638" expanded="true" signature="2838:3082" ph="{...}" />
+                <marker date="1522442262638" expanded="true" signature="3099:3143" ph="{...}" />
+                <marker date="1522442262638" expanded="true" signature="3181:3221" ph="{...}" />
+                <marker date="1522442262638" expanded="true" signature="3257:3396" ph="{...}" />
+                <marker date="1522442262638" expanded="true" signature="3437:3615" ph="..." />
+                <marker date="1522442262638" expanded="true" signature="3468:3603" ph="{...}" />
+                <marker date="1522442262638" expanded="true" signature="3516:3599" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -134,11 +167,11 @@
         <option value="$PROJECT_DIR$/app/views/notification_mailer/send_notification.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/home/employee_index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/checkout.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/attendances/checkout.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/attendances_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/home/employee_index.html.erb" />
       </list>
     </option>
   </component>
@@ -441,7 +474,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32116000" />
+    <option name="totallyTimeSpent" value="32348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="-4" width="1313" height="772" extended-state="6" />
@@ -590,7 +623,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="446">
           <caret line="40" column="36" lean-forward="false" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
-          <folding />
+          <folding>
+            <marker date="1522442262638" expanded="true" signature="134:141" ph=" ... end" />
+            <marker date="1522442262638" expanded="true" signature="164:476" ph=" ... end" />
+            <marker date="1522442262638" expanded="true" signature="169:470" ph="if ... end" />
+            <marker date="1522442262638" expanded="true" signature="495:802" ph=" ... end" />
+            <marker date="1522442262638" expanded="true" signature="500:796" ph="if ... end" />
+            <marker date="1522442262638" expanded="true" signature="825:910" ph=" ... end" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -824,15 +864,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/employee_index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding />
+          <folding>
+            <marker date="1522442262638" expanded="true" signature="134:141" ph=" ... end" />
+            <marker date="1522442262638" expanded="true" signature="164:476" ph=" ... end" />
+            <marker date="1522442262638" expanded="true" signature="169:470" ph="if ... end" />
+            <marker date="1522442262638" expanded="true" signature="495:802" ph=" ... end" />
+            <marker date="1522442262638" expanded="true" signature="500:796" ph="if ... end" />
+            <marker date="1522442262638" expanded="true" signature="825:910" ph=" ... end" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -853,7 +892,31 @@
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1522442262638" expanded="true" signature="441:475" ph="..." />
+            <marker date="1522442262638" expanded="true" signature="502:911" ph="..." />
+            <marker date="1522442262638" expanded="true" signature="534:725" ph="..." />
+            <marker date="1522442262638" expanded="true" signature="726:844" ph="..." />
+            <marker date="1522442262638" expanded="true" signature="750:836" ph="..." />
+            <marker date="1522442262638" expanded="true" signature="783:827" ph="..." />
+            <marker date="1522442262638" expanded="true" signature="873:904" ph="..." />
+            <marker date="1522442262638" expanded="true" signature="936:3404" ph="..." />
+            <marker date="1522442262638" expanded="true" signature="941:965" ph="{...}" />
+            <marker date="1522442262638" expanded="true" signature="972:1333" ph="{...}" />
+            <marker date="1522442262638" expanded="true" signature="1359:1592" ph="{...}" />
+            <marker date="1522442262638" expanded="true" signature="1646:1757" ph="{...}" />
+            <marker date="1522442262638" expanded="true" signature="1821:1950" ph="{...}" />
+            <marker date="1522442262638" expanded="true" signature="1961:2183" ph="{...}" />
+            <marker date="1522442262638" expanded="true" signature="2203:2293" ph="{...}" />
+            <marker date="1522442262638" expanded="true" signature="2330:2403" ph="{...}" />
+            <marker date="1522442262638" expanded="true" signature="2442:2684" ph="{...}" />
+            <marker date="1522442262638" expanded="true" signature="2774:2823" ph="{...}" />
+            <marker date="1522442262638" expanded="true" signature="2838:3082" ph="{...}" />
+            <marker date="1522442262638" expanded="true" signature="3099:3143" ph="{...}" />
+            <marker date="1522442262638" expanded="true" signature="3181:3221" ph="{...}" />
+            <marker date="1522442262638" expanded="true" signature="3257:3396" ph="{...}" />
+            <marker date="1522442262638" expanded="true" signature="3437:3615" ph="..." />
+            <marker date="1522442262638" expanded="true" signature="3468:3603" ph="{...}" />
+            <marker date="1522442262638" expanded="true" signature="3516:3599" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -908,9 +971,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/attendances_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="92" column="18" lean-forward="false" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
+        <state relative-caret-position="298">
+          <caret line="78" column="30" lean-forward="true" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/employee_index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="190" column="0" lean-forward="true" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

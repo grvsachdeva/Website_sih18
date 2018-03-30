@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-
+before_action :authenticate_employee!, only: [:employee_index ,:admin_index]
 
   def index
 
