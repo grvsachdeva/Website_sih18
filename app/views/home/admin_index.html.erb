@@ -1,19 +1,14 @@
+<div style="margin-left: 50px;">
+  <div class="row">
+    <h5>
+      <%= @admin.name  %><br />
+      <%= @admin.email  %><br />
+      <%= @admin.departmentname %><br />
+    </h5>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Employee_Name</th>
-      <th>Total_Attendance</th>
-      <th>Contact Number</th>
-    </tr>
-  </thead>
-  <% @employees.each do |employee| %>
-  <tbody>
-    <tr>
-      <td><%= employee.name %></td>
-      <td><%= employee.totalattendance %></td>
-      <td><%= employee.contactno %></td>
-    </tr>
-  </tbody>
-      <% end %>
-</table>
+
+
+</div>
+
+<%= render :partial => 'notify_employee.html.erb' %>

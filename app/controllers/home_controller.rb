@@ -23,6 +23,7 @@ before_action :authenticate_employee!, only: [:employee_index ,:admin_index]
       reset_session
       redirect_to '/employees/sign_in'
     else
+      @admin = current_employee
       @employees = Employee.all
       @departments = Department.all
     end
