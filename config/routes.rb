@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get '/employee' => 'home#employee_index'
   get '/admin' => 'home#admin_index'
-
+  get '/notify_employee' => 'home#notify_employee'
+  post '/send_notification' => 'home#send_notification'
   root 'home#index'
+
 end

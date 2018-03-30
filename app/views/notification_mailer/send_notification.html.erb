@@ -4,7 +4,7 @@ Hi <b><%= @employee.name %></b>,
 You are requested to mark your attendance immediately. It's urgent, so please make sure to mark as soon as possible.
 <br />
 <hr />
-You can use this link <a href="http://<%= request.host_with_port %>/sign_in/">http://<%= request.host_with_port %>/sign_in/</a> to login to website
+You can use this link <a href="http://<%= ActionMailer::Base.default_url_options[:host] %>/sign_in/">http://<%= ActionMailer::Base.default_url_options[:host] %>/sign_in/</a> to login to website
 <hr />
 <br />
 Thank you,
