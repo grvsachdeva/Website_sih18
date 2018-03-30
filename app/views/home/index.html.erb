@@ -21,7 +21,7 @@ function getLocation() {
 function showPosition(position) {
     x.innerHTML = "Latitude: " + position.coords.latitude +
     "<br>Longitude: " + position.coords.longitude;
-    $.post('/home/mark_attendance',{"latitude":position.coords.latitude,"longitude":position.coords.longitude}, function(data) {
+    $.get('/attendances/new',{"latitude":position.coords.latitude,"longitude":position.coords.longitude}, function(data) {
 
        });
 }

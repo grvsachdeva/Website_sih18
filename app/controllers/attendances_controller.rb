@@ -14,7 +14,14 @@ class AttendancesController < ApplicationController
 
   # GET /attendances/new
   def new
-  
+    latitude = params[:latitude]
+    longitude = params[:longitude]
+    geo_localization = "#{latitude},#{longitude}"
+    query = Geocoder.search(geo_localization).first
+    location = query.formatted_address
+    time_in = Time.now
+    employee_id = current_employee.id
+    @attendance = Attendance.create(location:location,employee_id:employee_id,timeIn:time_in)
   end
 
   # GET /attendances/1/edit

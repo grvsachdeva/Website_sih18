@@ -34,12 +34,10 @@ class HomeController < ApplicationController
     longitude = params[:longitude]
     geo_localization = "#{latitude},#{longitude}"
     query = Geocoder.search(geo_localization).first
-      location = query.formatted_address
+    location = query.formatted_address
     time_in = Time.now
     employee_id = current_employee.id
-data = [location,time_in,employee_id]
-byebug
-    @attendance = Attendance.create(args[:data].to_h)
+    @attendance = Attendance.create(location:location,employee_id:employee_id,timeIn:time_in)
   end
 
 
