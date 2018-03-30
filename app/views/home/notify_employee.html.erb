@@ -3,19 +3,15 @@
     <h4>Employees List</h4>
   </div>
 </div>
-
-<br />
-<br />
-
 <div class="container">
 
   <% @employees.each do |employee| %>
-      <div class="card-panel hoverable orange" style="display: flex; justify-content: space-between;">
+      <div class="card-panel hoverable orange" style="display: inline-flex;">
         <div>
           <h5><%= employee.name %></h5>
         </div>
         <div style="vertical-align: middle;">
-          <%= link_to "Send",{:controller => :home,:action => :send_notification, eid: employee.id}, :method => :post %>
+          <%= link_to "Send",{:controller => :home,:action => :send_notification, eid: employee.id}, :method => :post, :class => 'button' %>
         </div>
       </div>
   <% end %>
