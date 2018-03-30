@@ -1,8 +1,14 @@
 <div class="container">
   <% @employees.each do |employee| %>
-      <h6 class="card-panel hoverable">
-        <%= employee.name %>
-      </h6>
+              <%= employee.name %>
+        <% @attendances = employee.todays_attendance current_employee.id %>
+        <% @attendances.each do |attendance| %>
+          <h6 class="card-panel hoverable">
+            Time in: <%= attendance.timeIn %>
+            <hr />
+            Time out: <%= attendance.timeOut %>
+          </h6>
+        <% end %>
   <% end %>
 
 </div>

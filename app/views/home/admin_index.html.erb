@@ -7,12 +7,12 @@
       <th>Contact Number</th>
     </tr>
   </thead>
-  <%@employees.each do |employee|%>
+  <% @employees.each do |employee| %>
   <tbody>
     <tr>
-      <td>@employee.name</td>
-      <td>@employee.attendances</td>
-      <td>@employee.location</td>
+      <td><%= employee.name %></td>
+      <td><%= employee.totalattendance %></td>
+      <td><%= employee.contactno %></td>
     </tr>
   </tbody>
       <% end %>
