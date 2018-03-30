@@ -44,6 +44,9 @@
 h2{
   text-align: center;
 }
+button{
+background-color: none;
+}
 .card {
   width: 400px;
   height: 500px;
@@ -151,19 +154,16 @@ h2{
 </style>
 
 <script type="text/javascript">
-var x = document.getElementById("demo");
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
+
     }
 }
 function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
-    $.post('/home/mark_attendance',{"latitude":position.coords.latitude,"longitude":position.coords.longitude}, function(data) {
-       });
+  $.get('/attendances/new',{"latitude":position.coords.latitude,"longitude":position.coords.longitude}, function(data) {
+        });
 }
 $(document).ready(function() {
 
