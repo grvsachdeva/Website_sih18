@@ -1,0 +1,11 @@
+Hi <b><%= @employee.name %></b>,
+<br />
+<br />
+You are requested to mark your attendance immediately. It's urgent, so please make sure to mark as soon as possible.
+<br />
+<hr />
+You can use this link <a href="http://<%= request.host_with_port %>/sign_in/">http://<%= request.host_with_port %>/sign_in/</a> to login to website
+<hr />
+<br />
+Thank you,
+<%= @sender.name %>
