@@ -1,3 +1,5 @@
 class Department < ApplicationRecord
-  DEPARTMENTS = Department.all
+  def employees_department department
+    Employee.where(departmentname: department)
+  end
 end
