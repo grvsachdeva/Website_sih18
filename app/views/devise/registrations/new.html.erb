@@ -31,9 +31,16 @@
     <%=f.select :departmentname, options_from_collection_for_select(Department.all, :id, :name)%>
   </div>
 
-  <div class="actions">
+    <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+  
