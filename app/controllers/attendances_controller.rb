@@ -31,15 +31,7 @@ class AttendancesController < ApplicationController
   # POST /attendances
   # POST /attendances.json
   def create
-    latitude = params[:latitude]
-    longitude = params[:longitude]
-    geo_localization = "#{latitude},#{longitude}"
-    query = Geocoder.search(geo_localization).first
-    if query.present?
-      location = query.formatted_address
-    end
-    time_in = Time.now
-    @attendance = Attendance.new(:location,:time)
+    @attendance = Attendance.new(attendance_params)
 
     respond_to do |format|
       if @attendance.save
