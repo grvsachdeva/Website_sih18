@@ -1,9 +1,18 @@
-<% @departments.each do |department| %>
-    <%= department.name %>
-    <hr />
-    <% @employee_depart = department.employees_department department.name %>
-    <% @employee_depart.each do |employee| %>
-        <br />
-      <%= employee.name %>
-    <% end %>
-<% end%>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee_Name</th>
+      <th>Total_Attendance</th>
+      <th>Contact Number</th>
+    </tr>
+  </thead>
+  <%@employees.each do |employee|%>
+  <tbody>
+    <tr>
+      <td>@employee.name</td>
+      <td>@employee.attendances</td>
+      <td>@employee.location</td>
+    </tr>
+  </tbody>
+</table>

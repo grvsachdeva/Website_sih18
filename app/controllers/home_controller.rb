@@ -5,6 +5,7 @@ class HomeController < ApplicationController
 
   end
 
+
   def employee_index
     if current_employee && current_employee.isAdmin == true
       flash[:notice] = "You are an Administrator, please use 'Login as Admin' option to login !!!"
@@ -27,6 +28,7 @@ class HomeController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
   def mark_attendance
     latitude = params[:latitude]
     longitude = params[:longitude]
@@ -37,4 +39,7 @@ class HomeController < ApplicationController
     employee_id = current_employee.id
     @attendance = Attendance.create(location:location,employee_id:employee_id,timeIn:time_in)
   end
+=======
+
+>>>>>>> bd42c06b096f48f2ef6d22ac3fa9baa92f13460e
 end
