@@ -14,7 +14,7 @@ class AttendancesController < ApplicationController
 
   # GET /attendances/new
   def new
-    @attendance = Attendance.new
+  
   end
 
   # GET /attendances/1/edit
@@ -24,7 +24,15 @@ class AttendancesController < ApplicationController
   # POST /attendances
   # POST /attendances.json
   def create
-    @attendance = Attendance.new(attendance_params)
+    latitude = params[:latitude]
+    longitude = params[:longitude]
+    geo_localization = "#{latitude},#{longitude}"
+    query = Geocoder.search(geo_localization).first
+    if query.present?
+      location = query.formatted_address
+    end
+    time_in = Time.now
+    @attendance = Attendance.new(:location,:time)
 
     respond_to do |format|
       if @attendance.save
@@ -62,13 +70,13 @@ class AttendancesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_attendance
-      @attendance = Attendance.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_attendance
+    @attendance = Attendance.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def attendance_params
-      params.require(:attendance).permit(:image_uri, :location, :remarks, :timeIn, :timeOut, :employee_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def attendance_params
+    params.require(:attendance).permit(:image_uri, :location, :remarks, :timeIn, :timeOut, :employee_id)
+  end
 end

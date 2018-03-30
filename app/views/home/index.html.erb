@@ -1,3 +1,29 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
-<%= link_to('Logout', destroy_employee_session_path, method: :delete) %>   
+<%= link_to('Logout', destroy_employee_session_path, method: :delete) %>
+
+
+
+<div id="demo"></div>
+<button onclick="getLocation()">Yoo</button>
+
+
+<script>
+var x = document.getElementById("demo");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+
+}
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+    $.post('/home/mark_attendance',{"latitude":position.coords.latitude,"longitude":position.coords.longitude}, function(data) {
+
+       });
+}
+
+</script>

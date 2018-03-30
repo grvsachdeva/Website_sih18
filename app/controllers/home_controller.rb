@@ -29,4 +29,18 @@ class HomeController < ApplicationController
 
   end
 
+  def mark_attendance
+    latitude = params[:latitude]
+    longitude = params[:longitude]
+    geo_localization = "#{latitude},#{longitude}"
+    query = Geocoder.search(geo_localization).first
+      location = query.formatted_address
+    time_in = Time.now
+    employee_id = current_employee.id
+data = [location,time_in,employee_id]
+byebug
+    @attendance = Attendance.create(args[:data].to_h)
+  end
+
+
 end
