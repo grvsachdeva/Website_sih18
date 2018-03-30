@@ -12,7 +12,7 @@ class HomeController < ApplicationController
       reset_session
       redirect_to '/employees/sign_in'
     else
-      @employees = Employee.all
+      @employee = current_employee
       @departments = Department.all
     end
   end
@@ -26,5 +26,19 @@ class HomeController < ApplicationController
       @employees = Employee.all
       @departments = Department.all
     end
+  end
+
+  def notify_employee
+    @sender = current_employee
+    @employees = Employee.where(isAdmin: false)
+  end
+
+  def send_notification
+    byebug
+    @sender = current_employee
+    @employee = Employee.where(id: params[:eid]).first
+    NotificationMailer.send_notification(@employee, @sender).deliver_now
+    flash[:notice] = "Mail sent !!! "
+    redirect_to '/notify_employee'
   end
 end
