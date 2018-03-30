@@ -12,7 +12,7 @@ class HomeController < ApplicationController
       reset_session
       redirect_to '/employees/sign_in'
     else
-      @employees = Employee.all
+      @employee = current_employee
       @departments = Department.all
     end
   end
