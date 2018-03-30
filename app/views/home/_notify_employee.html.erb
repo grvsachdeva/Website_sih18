@@ -1,18 +1,34 @@
-<div class="container">
-  <div class="card-panel blue">
+ <div class="card-panel blue">
     <h4>Employees List</h4>
   </div>
-</div>
-<div class="container">
-
   <% @employees.each do |employee| %>
-      <div class="card-panel hoverable orange" style="display: inline-flex;">
-        <div>
+      <div class="card-panel hoverable orange" style="width: 100%; display: inline-flex;">
           <h5><%= employee.name %></h5>
-        </div>
-        <div style="vertical-align: middle;">
-          <%= link_to "Send",{:controller => :home,:action => :send_notification, eid: employee.id}, :method => :post, :class => 'button' %>
-        </div>
+
+        <button style="margin-left: 60%; width:100px;" class="btn waves-effect waves-light" type="submit" name="action">Send message
+          <i class="material-icons right">send</i>
+          <%= link_to "Send",{:controller => :home,:action => :send_notification, eid: employee.id}, :method => :post, :class => 'linking' %>
+        </button>
+          <br />
+
       </div>
   <% end %>
-</div>
+
+ <style>
+   .linking {
+     width: 100%;
+     border: none;
+     color: #ff9800;
+     text-align: right;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 14px;
+     cursor: pointer;
+     float: left;
+     text: white;
+   }
+
+     .linking:hover{
+       color: #ff9800;
+     }
+ </style>
