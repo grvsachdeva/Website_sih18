@@ -5,6 +5,15 @@ before_action :authenticate_employee!, only: [:employee_index ,:admin_index]
 
   end
 
+  def profile
+    @employee = current_employee
+  end
+
+ def history
+  @history = Attendance.where(employee_id: current_employee.id)
+  puts @history
+  end
+
 
   def employee_index
     if current_employee && current_employee.isAdmin == true

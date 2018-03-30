@@ -1,0 +1,30 @@
+
+<table class="striped" class="centered" class="border">
+  <thead>
+    <tr>
+      <th>Employee Id</th>
+      <th>Loaction</th>
+      <th>Time IN</th>
+    </tr>
+  </thead>
+<%@history.each do |history|%>
+  <tbody>
+    <tr>
+      <td><%=history.employee_id%></td>
+      <td><%=history.location%></td>
+      <td><%=history.timeIn%></td>
+    </tr>
+  </tbody>
+<%end%>
+</table>
+
+<style type="text/css">
+tr{
+border: 1px solid black;
+margin: 20px;
+}
+th ,td{
+font-size: 20px;
+border: 1px solid black;
+}
+</style>
