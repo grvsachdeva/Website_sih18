@@ -40,6 +40,7 @@ before_action :authenticate_employee!, only: [:employee_index ,:admin_index]
   def notify_employee
     @sender = current_employee
     @employees = Employee.where(isAdmin: false)
+    render 'home/employee_index'
   end
 
   def send_notification
