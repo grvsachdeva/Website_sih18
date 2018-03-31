@@ -48,6 +48,6 @@ before_action :authenticate_employee!, only: [:employee_index ,:admin_index]
     @employee = Employee.where(id: params[:eid]).first
     NotificationMailer.send_notification(@employee, @sender).deliver_now
     flash[:notice] = "Mail sent !!! "
-    redirect_to '/notify_employee'
+    redirect_to '/admin'
   end
 end
