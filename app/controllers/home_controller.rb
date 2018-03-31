@@ -32,7 +32,7 @@ before_action :authenticate_employee!, only: [:employee_index ,:admin_index]
       redirect_to '/employees/sign_in'
     else
       @admin = current_employee
-      @employees = Employee.all
+      @employees = Employee.where(isAdmin: false)
       @departments = Department.all
     end
   end
@@ -48,6 +48,13 @@ before_action :authenticate_employee!, only: [:employee_index ,:admin_index]
     @employee = Employee.where(id: params[:eid]).first
     NotificationMailer.send_notification(@employee, @sender).deliver_now
     flash[:notice] = "Mail sent !!! "
-    redirect_to '/notify_employee'
+    redirect_to '/admin'
   end
+
+def employee_attendance
+  @employee = Employee.where(id: params[:eid]).first
+  @attendances = Attendance.where(employee_id: @employee.id)
+  render 'attendances/employee_attendance'
+end
+
 end

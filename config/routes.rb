@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/attendances/employee' => 'home#employee_attendance'
   resources :attendances
   get 'home/index'
   post 'home/mark_attendance' => 'home#mark_attendance'

@@ -4,7 +4,12 @@
   <% @employees.each do |employee| %>
       <div class="card-panel hoverable orange" style="width: 100%; display: inline-flex;">
           <h5><%= employee.name %></h5>
-      <span style="margin-left: auto;">
+
+        <span style=" margin-left: auto; margin-right: 0px;">
+        <%= link_to "Show",{:controller => :home,:action => :employee_attendance, eid: employee.id}, :method => :get, class: "btn waves-effect waves-ligh" %>
+      </span>
+
+        <span style=" margin-left: 8px;">
         <%= link_to "Send",{:controller => :home,:action => :send_notification, eid: employee.id}, :method => :post, class: "btn waves-effect waves-ligh" %>
       </span>
         <br />
