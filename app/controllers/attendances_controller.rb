@@ -1,6 +1,5 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
-  before_action :check_records, only: [:new]
 
   # GET /attendances
   # GET /attendances.json
@@ -15,7 +14,8 @@ class AttendancesController < ApplicationController
 
   # GET /attendances/new
   def new
-    if @unmarked_records != nil
+    @unmarked_records = Attendance.where(timeOut: nil, employee_id: current_employee.id)
+    if @unmarked_records.count > 0
       respond_to do |format|
       # format.html{
       #   redirect_to '/checkout'
@@ -94,10 +94,6 @@ class AttendancesController < ApplicationController
   end
 
   private
-
-  def check_records
-    @unmarked_records = Attendance.where(timeOut: nil, employee_id: current_employee.id)
-  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_attendance
