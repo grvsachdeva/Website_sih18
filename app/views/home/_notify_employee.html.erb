@@ -1,8 +1,8 @@
- <div class="card-panel blue">
+ <div class="card-panel" style="background-color:#0e2f44;color:white">
     <h4>Employees List</h4>
   </div>
   <% @employees.each do |employee| %>
-      <div class="card-panel hoverable orange" style="width: 100%; display: inline-flex;">
+      <div class="card-panel hoverable" style="width: 100%; display: inline-flex;background-color:#cccccc">
           <h5><%= employee.name %></h5>
 
         <span style=" margin-left: auto; margin-right: 0px;">
@@ -18,6 +18,9 @@
   <% end %>
 
  <style>
+h4{
+background-color: #0e2f44;
+}
    .linking {
      margin-left: auto;
      background-color: #5ad45c;
